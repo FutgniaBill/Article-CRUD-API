@@ -1,12 +1,12 @@
 const express = require("express");
 const { connect } = require("./db/connect");
-const routerUtilisateurs = require("./routers/utilisateur");
+const routerArticle = require("./routers/article");
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/api/v1", routerUtilisateurs);
+app.use("/api/v1", routerArticle);
 
 connect("mongodb://localhost:27017/", (err) => {
   if (err) {
